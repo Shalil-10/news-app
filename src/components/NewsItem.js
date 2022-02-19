@@ -7,15 +7,28 @@ export default class NewsItem extends Component {
 
   render() {
     let { title, description, imageUrl, newsUrl, author, date, source } = this.props   //-->this.props.title
-    return <div>
-      <Card style={{ width: '18rem' }}>
+    return <div className='my-3'>
+      <Card >
+
+
+        <div style={{
+          display: 'flex',
+          position: 'absolute',
+          justifyContent: 'flex-end',
+          right: '0',
+
+        }}>
+          <span className="badge rounded-pill bg-danger">
+            {source}
+
+          </span>
+        </div>
+
+
         <Card.Img variant="top" src={imageUrl} />
         <Card.Body>
+
           <Card.Title>{title}
-            <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '90%', zIndex: 1}}>
-              {source}
-             
-            </span>
           </Card.Title>
           <Card.Text>
             {description}
